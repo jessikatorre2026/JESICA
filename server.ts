@@ -72,8 +72,8 @@ async function startServer() {
       const responseText = result.text; 
 
       res.status(200).json({ reply: responseText });
-    } catch (error) {
-      console.error("Error en la galaxia:", error);
+    } catch (error: any) {
+      console.error("Error en la galaxia:", JSON.stringify(error, null, 2));
       res.status(500).json({ error: 'Error de conexión estelar' });
     }
   });
